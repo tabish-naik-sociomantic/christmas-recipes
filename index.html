@@ -13,8 +13,40 @@
 </script>
   </head>
 <body>
+  function main(){
+  var cookiecheck = document.cookie;
+
+if(cookiecheck.indexOf('newuser') == -1 ){
+
+
+    (function(){
+        var s   = document.createElement('script');
+        var x   = document.getElementsByTagName('script')[0];
+        s.type  = 'text/javascript';
+        s.async = true;
+        s.src   = ('https:'==document.location.protocol?'https://':'http://')
+                + 'ap-sonar.sociomantic.com/js/2010-07-01/adpan/propertyguru-sg';
+        x.parentNode.insertBefore( s, x );
+    })();
+
+(function () {
+   var date = new Date();
+   date.setTime(date.getTime()+(30*24*60*60*1000));
+   var expires = " expires="+date.toGMTString();
+
+
+   document.cookie = "'newuser=;'+expires+; path=/";
+})();
+
+}
+
+}
 <h1>Hello World</h1>
 <p>I'm hosted </p>
+<form id="myForm">
+  Name : <input type = "text" name = "yourname">
+  <input type="button" onclick = "main()">
+</form>
 </body>
 </html>
 
